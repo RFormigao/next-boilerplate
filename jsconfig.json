@@ -1,0 +1,17 @@
+{
+	"exclude": ["node_modules"],
+	"compilerOptions": {
+		"baseUrl": "./src/",
+		"paths": {
+			"@/components/*": ["components/*"],
+			"@/contexts/*": ["contexts/*"],
+			"@/mocks/*": ["mocks/*"],
+			"@/modules/*": ["modules/*"],
+			"@/services/*": ["services/*"],
+			"@/hooks/*": ["hooks/*"],
+			"@/hocs/*": ["hocs/*"],
+			"@/utils/*": ["utils/*"],
+			"@/*": ["*"]
+		}
+	}
+}

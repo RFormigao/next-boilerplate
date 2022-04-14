@@ -3,18 +3,51 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect=0.0.0.0:9229' next dev --",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "supportedBrowsers": "echo \"module.exports = $(browserslist-useragent-regexp --allowHigherVersions);\" > supportedBrowsers.js"
   },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": [
+    "> 0.3% in my stats",
+    "not dead"
+  ],
   "dependencies": {
+    "axios": "^0.26.1",
     "next": "12.1.5",
+    "nookies": "^2.5.2",
+    "polished": "^4.2.2",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "scheduler": "^0.21.0",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "eslint": "8.13.0",
-    "eslint-config-next": "12.1.5"
+    "@commitlint/cli": "12.0.1",
+    "@commitlint/config-conventional": "12.0.1",
+    "browserslist": "4.18.1",
+    "browserslist-useragent-regexp": "3.0.2",
+    "eslint": "7.11.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-react": "7.21.5",
+    "husky": "5.2.0",
+    "install-peers": "1.0.3",
+    "lint-staged": "10.5.4"
   }
 }
